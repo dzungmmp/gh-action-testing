@@ -18,11 +18,9 @@ jobs:
       with:
         go-version: 1.17
     
-    - name: Write configs
+    - name: Write configs and test
       env:
           APP_CONFIG: ${{ secrets.APP_CONFIG }}
       run: |
         echo $APP_CONFIG > ./secrets/config.yaml
-
-    - name: Test
-      run: go test -v ./...
+        go test -v ./...
