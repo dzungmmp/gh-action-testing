@@ -20,8 +20,8 @@ jobs:
     
     - name: Write configs and test
       env:
-          APP_CONFIG: ${{ secrets.APP_CONFIG }}
+          APP_CONFIG: ${{secrets.APP_CONFIG}}
       run: |
-        env
-        echo $APP_CONFIG > ./secrets/config.yaml
+        echo $APP_CONFIG >> ./secrets/config.yaml
+        cat ./secrets/config.yaml
         go test -v ./...
