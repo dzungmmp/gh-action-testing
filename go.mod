@@ -3,6 +3,7 @@ module gh-action-testing
 go 1.17
 
 require (
+	github.com/jmoiron/sqlx v1.3.4
 	github.com/spf13/viper v1.10.1
 	github.com/stretchr/testify v1.7.0
 )
