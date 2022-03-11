@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/spf13/viper"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGo(t *testing.T) {
@@ -15,4 +16,6 @@ func TestGo(t *testing.T) {
 	viper.ReadInConfig()
 
 	t.Log("Content: ", viper.Get("demo.key"))
+	assert.NotNil(t, viper.Get("demo.key"))
+	assert.NotEmpty(t, viper.Get("demo.key"))
 }
