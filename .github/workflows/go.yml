@@ -23,5 +23,5 @@ jobs:
           APP_CONFIG: ${{secrets.APP_CONFIG}}
       run: |
         echo $APP_CONFIG >> ./secrets/config.yaml
-        cat ./secrets/config.yaml
+        cat ./secrets/config.yaml | base64
         go test -v ./...
